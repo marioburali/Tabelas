@@ -12,6 +12,14 @@
             padding: 8px;
         }
         td.dado{background-color: yellow;}
+        th{
+            border: 2px solid black;
+            background-color:lightgray;
+            padding: 8px;
+        }
+        tbody tr:nth-child(2n){
+            background-color: lightgoldenrodyellow;
+        }
     </style>
 </head>
 <body>
@@ -98,34 +106,295 @@
 
     <h2>Tabelas Grandes</h2>
     <p>Para tabelas maiores, deve-se usar tag semântica para facilitar mecanismos de busca. Entre elas estão: thead, tbody e tfoot.</p>
-    <p>Em thead é melhor usar a tag th para criar dados que serão como títulos ou áreas. Sendo a classificação ou parâmetro da tabela</p>
+    <p>Em thead é melhor usar a tag th para criar dados que serão como títulos ou áreas. Sendo a classificação ou parâmetro da tabela.</p>
     <p>Em tbody usas-se, preferencialmente, a tag td para inserir os dados.</p>
-    <p>tfoot é o rodapé da tabela</p>
+    <p>tfoot é o rodapé da tabela.</p>
+    <p>Usa-se caption para dar título para a tabela.</p>
+    <p>Scope é usado dentro da tag th para dizer onde estarão os dados referentes a este parâmetro. Por exemplo, os dados do parâmetro Estado estão na mesma coluna, então deve-se usar dentro da tag th de Estado o elemento scope="col". </p>
+    <p>No caso do Total, o dado não está na mesma coluna e sim na mesma linha, então deve-se usar scope="row".</p>
 
     <img src="print04.png" alt="tabelas grandes com semântica">
 
     <table>
+        <caption>População Brasileira por estado</caption>
         <thead>
             <tr>
-                <th style="border: 2px solid black;">Estado</th><th style="border: 2px solid black;">População</th>
+              <th scope="col">Estado</th>
+              <th scope="col">População</th>
             </tr>
-        </thead>
-
-        <tbody>
+          </thead>
+          <tbody>
             <tr>
-                <td>São Paulo</td><td>46,65 milhões</td>
+              <td>Acre</td>
+              <td>906,876</td>
             </tr>
             <tr>
-                <td>Rio de Janeiro</td><td>17,46 milhões</td>
+              <td>Alagoas</td>
+              <td>3,351,543</td>
             </tr>
-        </tbody>
-        <tfoot>
             <tr>
-                <th style="border: 2px solid black;">Total no Brasil</th><td>213,99 milhões</td>
+              <td>Amapá</td>
+              <td>877,613</td>
             </tr>
-        </tfoot>
+            <tr>
+              <td>Amazonas</td>
+              <td>4,268,224</td>
+            </tr>
+            <tr>
+              <td>Bahia</td>
+              <td>15,226,371</td>
+            </tr>
+            <tr>
+              <td>Ceará</td>
+              <td>9,187,103</td>
+            </tr>
+            <tr>
+              <td>Distrito Federal</td>
+              <td>3,366,171</td>
+            </tr>
+            <tr>
+              <td>Espírito Santo</td>
+              <td>4,064,052</td>
+            </tr>
+            <tr>
+              <td>Goiás</td>
+              <td>7,344,281</td>
+            </tr>
+            <tr>
+              <td>Maranhão</td>
+              <td>7,177,291</td>
+            </tr>
+            <tr>
+              <td>Mato Grosso</td>
+              <td>3,603,902</td>
+            </tr>
+            <tr>
+              <td>Mato Grosso do Sul</td>
+              <td>2,809,394</td>
+            </tr>
+            <tr>
+              <td>Minas Gerais</td>
+              <td>21,292,666</td>
+            </tr>
+            <tr>
+              <td>Pará</td>
+              <td>8,903,064</td>
+            </tr>
+            <tr>
+              <td>Paraíba</td>
+              <td>4,039,277</td>
+            </tr>
+            <tr>
+              <td>Paraná</td>
+              <td>11,516,840</td>
+            </tr>
+            <tr>
+              <td>Pernambuco</td>
+              <td>9,616,621</td>
+            </tr>
+            <tr>
+              <td>Piauí</td>
+              <td>3,281,480</td>
+            </tr>
+            <tr>
+              <td>Rio de Janeiro</td>
+              <td>17,463,963</td>
+            </tr>
+            <tr>
+              <td>Rio Grande do Norte</td>
+              <td>3,534,165</td>
+            </tr>
+            <tr>
+              <td>Rio Grande do Sul</td>
+              <td>11,466,687</td>
+            </tr>
+            <tr>
+              <td>Rondônia</td>
+              <td>1,816,687</td>
+            </tr>
+            <tr>
+              <td>Roraima</td>
+              <td>652,713</td>
+            </tr>
+            <tr>
+              <td>Santa Catarina</td>
+              <td>7,416,556</td>
+            </tr>
+            <tr>
+              <td>São Paulo</td>
+              <td>46,289,333</td>
+            </tr>
+            <tr>
+              <td>Sergipe</td>
+              <td>2,359,444</td>
+            </tr>
+            <tr>
+              <td>Tocantins</td>
+              <td>1,625,140</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th>Total</th>
+              <td><strong>213,99 milhões</strong></td>
+            </tr>
+          </tfoot>
     </table>
+    <p>Para fazer um efeito "zebrado" para facilitar a leitura, usa-se "table tr:nth-child(2n)" e o backgorund-color. 
+    </p>
+    <p>Agora uma tabela com cabeçalho fixo usamos em table a função style="position: relative;" e em thead tr a função style="position: sticky; top: 0;"></p>
 
-
+    <table style="position: relative;">
+        <thead>
+          <tr style="position: sticky; top: 0;">
+            <th>Posição</th>
+            <th>Equipe</th>
+            <th>Pontos</th>
+            <th>Vitórias</th>
+            <th>Saldo de Gols</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Roma</td>
+            <td>85</td>
+            <td>26</td>
+            <td>+50</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Inter de Milão</td>
+            <td>82</td>
+            <td>25</td>
+            <td>+48</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>AC Milan</td>
+            <td>78</td>
+            <td>24</td>
+            <td>+45</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Juventus</td>
+            <td>72</td>
+            <td>22</td>
+            <td>+40</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Napoli</td>
+            <td>68</td>
+            <td>21</td>
+            <td>+35</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Lazio</td>
+            <td>65</td>
+            <td>20</td>
+            <td>+30</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Fiorentina</td>
+            <td>60</td>
+            <td>18</td>
+            <td>+25</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Atalanta</td>
+            <td>58</td>
+            <td>17</td>
+            <td>+20</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Udinese</td>
+            <td>55</td>
+            <td>16</td>
+            <td>+15</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Parma</td>
+            <td>50</td>
+            <td>14</td>
+            <td>+10</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Sampdoria</td>
+            <td>45</td>
+            <td>13</td>
+            <td>+5</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td>Bologna</td>
+            <td>42</td>
+            <td>12</td>
+            <td>+3</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td>Cagliari</td>
+            <td>40</td>
+            <td>11</td>
+            <td>+1</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td>Hellas Verona</td>
+            <td>38</td>
+            <td>10</td>
+            <td>-2</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td>Spezia</td>
+            <td>35</td>
+            <td>9</td>
+            <td>-5</td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td>Genoa</td>
+            <td>32</td>
+            <td>8</td>
+            <td>-8</td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td>Udinese</td>
+            <td>30</td>
+            <td>7</td>
+            <td>-10</td>
+          </tr>
+          <tr>
+            <td>18</td>
+            <td>Fiorentina</td>
+            <td>28</td>
+            <td>6</td>
+            <td>-12</td>
+          </tr>
+          <tr>
+            <td>19</td>
+            <td>Empoli</td>
+            <td>25</td>
+            <td>5</td>
+            <td>-15</td>
+          </tr>
+          <tr>
+            <td>20</td>
+            <td>Venezia</td>
+            <td>20</td>
+            <td>4</td>
+            <td>-20</td>
+        </tbody>
+      </table>   
 </body>
 </html>
