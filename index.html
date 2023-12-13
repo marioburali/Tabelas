@@ -4,8 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabelas</title>
+    <style>
+        table {width: 400px;}
+        tr.linha{background-color: grey;}
+        td{
+            border: 1px solid black;
+            padding: 8px;
+        }
+        td.dado{background-color: yellow;}
+    </style>
 </head>
 <body>
-    
+    <h1>Tabelas</h1>
+    <p>Para fazer uma tabela, se deve usar a tag table. Dentro desta tag, se usa as tags tr (table row - linha de tabela). Dentro da tag tr, usa-se as tags th (table header - caebeçalho da tabela) e td (table data - dado da tabela)</p>
+    <img src="Captura de Tela 2023-12-13 às 14.34.48.png" alt="exemplo de hierarquia de tabela">
+    <p>Formando assim:</p>
+    <table>
+        <tr>
+            <td>A1</td> <td>B1</td><td>C1</td>
+        </tr>
+    </table>
+    <p>Para fazer outras linhas, basta usar outras tags tr, da mesma forma:</p>
+    <img src="print2.png" alt="exemplo tabela">
+    <table>
+        <tr>
+            <td>A1</td> <td>B1</td><td>C1</td>
+        </tr>
+        <tr>
+            <td>A2</td><td>B2</td><td>C2</td>
+        </tr>
+        <tr>
+            <td>A3</td><td>B3</td><td>C3</td>
+        </tr>
+        <tr>
+            <td>A4</td><td>B4</td><td>C4</td>
+        </tr>
+    </table>
+
+    <p>Para criar as bordas e divisões da tabela, se deve usar CSS. Assim, deve-se criar parâmetros em CSS para editar com widht (largura), background-color, padding, border e border-collapse (para fazer uma única divisão, pois no padrão vem de forma "dupla".</p>
+    <img src="print3.png" alt="exemplo de tabela com divisões">
+
+    <table>
+        <tr>
+            <td>A1</td> <td>B1</td><td>C1</td>
+        </tr>
+        <tr class="linha">
+            <td>A2</td><td>B2</td><td>C2</td>
+        </tr>
+        <tr>
+            <td>A3</td><td>B3</td><td>C3</td>
+        </tr>
+        <tr>
+            <td>A4</td><td class="dado">B4</td><td>C4</td>
+        </tr>
+    </table>
+
+    <p>Ou:</p>
+    <table style="border-collapse: collapse;">
+        <tr>
+            <td>A1</td> <td>B1</td><td>C1</td>
+        </tr>
+        <tr class="linha">
+            <td>A2</td><td>B2</td><td>C2</td>
+        </tr>
+        <tr>
+            <td>A3</td><td>B3</td><td>C3</td>
+        </tr>
+        <tr>
+            <td>A4</td><td class="dado">B4</td><td>C4</td>
+        </tr>
+    </table>
+
+
+    <p>Para mudar a posição dos dados dentro da tabela, deve-se usar os parâmetros text-align e vertical-align:
+    </p>
+    <p>text-align: left, center ou right</p>
+    <p>vertical-align: top, middle ou bottom</p>
+
+    <table style="border-collapse: collapse;">
+        <tr style="text-align: center; vertical-align: middle;">
+            <td>A1</td> <td>B1</td><td>C1</td>
+        </tr>
+        <tr style="text-align: left; vertical-align: top;">
+            <td>A2</td><td>B2</td><td>C2</td>
+        </tr>
+        <tr style="text-align: right; vertical-align: bottom;">
+            <td>A3</td><td>B3</td><td>C3</td>
+        </tr>
+        <tr>
+            <td>A4</td><td>B4</td><td>C4</td>
+        </tr>
+    </table>
+
+
 </body>
 </html>
